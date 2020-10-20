@@ -1,1 +1,23 @@
-node_modules/
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+react-tutorial/node_modules
+react-tutorial/.pnp
+react-tutorial.pnp.js
+
+# testing
+react-tutorial/coverage
+
+# production
+react-tutorial/build
+
+# misc
+.DS_Store
+react-tutorial/.env.local
+react-tutorial/.env.development.local
+react-tutorial/.env.test.local
+react-tutorial/.env.production.local
+
+react-tutorial/npm-debug.log*
+react-tutorial/yarn-debug.log*
+react-tutorial/yarn-error.log*
