@@ -18,9 +18,9 @@ class Table extends Component {
     };
 
     const TableBody = (props) => {
-        const rows = props.characterData.map(data => {
+        const rows = props.characterData.map((data, index) => {
             return (
-                <tr>
+                <tr keys={index}>
                     <td>{data.name}</td>
                     <td>{data.job}</td>
                 </tr>
