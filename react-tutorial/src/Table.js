@@ -1,17 +1,19 @@
-import React, {Component} from 'react'
+import React from 'react'
 
-class Table extends Component {
-  render() {
+const Table = (props) => {
     
     const {
-        characterData
-    } = this.props;
+        characterData,
+        removeCharacter
+    } = props;
+
     const TableHeader = () => {
         return (
             <thead>
                 <tr>
                     <th>Name</th>
                     <th>Job</th>
+                    <th></th>
                 </tr>
             </thead>
         )
@@ -20,9 +22,12 @@ class Table extends Component {
     const TableBody = (props) => {
         const rows = props.characterData.map((data, index) => {
             return (
-                <tr keys={index}>
+                <tr key={index}>
                     <td>{data.name}</td>
                     <td>{data.job}</td>
+                    <td>
+                        <button onClick={() => props.removeCharacter(index)}>Delete</button>
+                    </td>
                 </tr>
             )
         });
@@ -38,10 +43,9 @@ class Table extends Component {
     return (
       <table>
           <TableHeader/>
-          <TableBody characterData={characterData}/>
+          <TableBody characterData={characterData} removeCharacter={removeCharacter}/>
       </table>
     )
   }
-}
 
 export default Table
